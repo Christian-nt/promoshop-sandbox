@@ -2,6 +2,7 @@ class CartRemoveButton extends HTMLElement {
   constructor() {
     super();
     this.addEventListener('click', (event) => {
+      console.log("event");
       event.preventDefault();
       this.closest('cart-items').updateQuantity(this.dataset.index, 0);
     });
@@ -54,6 +55,7 @@ class CartItems extends HTMLElement {
       }
     ];
   }
+
 // Updates the quantity of the cart when the quantity input is changed //
 // ? But, does it update the Cart db too! ? //
   updateQuantity(line, quantity, name) {
@@ -137,5 +139,6 @@ class CartItems extends HTMLElement {
     document.getElementById('main-cart-items').classList.remove('cart__items--disabled');
   }
 }
-
+console.table(getSectionsToRender());
 customElements.define('cart-items', CartItems);
+
