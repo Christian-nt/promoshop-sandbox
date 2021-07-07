@@ -2,7 +2,7 @@ class CartRemoveButton extends HTMLElement {
   constructor() {
     super();
     this.addEventListener('click', (event) => {
-      console.log("event");
+      console.log("event", event);
       event.preventDefault();
       this.closest('cart-items').updateQuantity(this.dataset.index, 0);
     });
@@ -21,7 +21,7 @@ class CartItems extends HTMLElement {
       .reduce((total, quantityInput) => total + parseInt(quantityInput.value), 0);
 
     this.debouncedOnChange = debounce((event) => {
-      console.trace(event);
+      console.trace("debouncedOnChange event: ",event);
       this.onChange(event);
     }, 300);
 
@@ -143,6 +143,6 @@ class CartItems extends HTMLElement {
     document.getElementById('main-cart-items').classList.remove('cart__items--disabled');
   }
 }
-
+console.table(getSectionsToRender());
 customElements.define('cart-items', CartItems);
 
