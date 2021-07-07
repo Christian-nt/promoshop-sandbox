@@ -443,7 +443,7 @@ let mechanic_btn = document.getElementById("mechanic_cart_submit");
 let cart_btns = document.getElementsByName("checkout");
 let btn = document.getElementById("close-modal-btn");
 let cost_center_num = document.getElementById("cost-center-number");
-console.log("cost center num: ", cost_center_num);
+console.log("cost center num: ", cost_center_num.value);
 
 
 // EMPTY THE CART AFTER DRAFT ORDER IS SUCCESSFULLY SUBMITTED //
