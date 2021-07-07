@@ -1,0 +1,29 @@
+{% comment %} 
+1. Success message modal 
+    a. when draft order is successfully submited.
+    b. modal button: redirects to home page.
+    c. Clear the cart.
+    d. "X" also redirects to home page and clears cart
+2. If there is an error: 
+    a. display an error message.
+    b. Stay on current page.
+    c. preserve cart.
+    d. button title: return to cart
+ {% endcomment %}
+
+
+ <div id="checkout-modal" class="sch-modal">
+    <div id="sch-content" class="sch-modal-content form-message form-message--success">
+        <div class="sch-align-content">
+            <div id="sch-modal-icon" class="icon-container">
+                {% include 'icon-close' %}
+            </div>
+            <div class="sch-message">
+                <h2>Your Draft Order Was Submitted Successfully</h2>
+            </div>
+            <div class="btn-container">
+                <a id="close-modal-btn" class="btn" href={{ routes.root_url }}>RETURN TO HOME PAGE</a>
+            </div>
+        </div>
+    </div>
+</div>

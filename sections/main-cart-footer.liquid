@@ -81,6 +81,15 @@
                 <button type="submit" class="cart__checkout-button button" name="checkout"{% if cart == empty %} disabled{% endif %} form="cart">
                   {{ 'sections.cart.checkout' | t }}
                 </button>
+                <input type="hidden" name="checkout"
+                  class="cart__checkout-button button"
+                  id="mechanic_cart_submit"
+                  value="Create Draft Order"
+                  data-cart="{{ cart | json | escape }}"
+                  data-customer-id="{{ customer.id | json | escape }}"
+                  data-customer-id-signature="{{ customer.id | hmac_sha256: 'YellowDuck2021' | json | escape }}"
+                  disabled
+                >
               </div>
 
               {%- if additional_checkout_buttons -%}
@@ -96,7 +105,7 @@
     </div>
   </div>
 </div>
-
+{%- render 'validate-cart-to-draft-order' -%}
 {% javascript %}
   class CartNote extends HTMLElement {
     constructor() {

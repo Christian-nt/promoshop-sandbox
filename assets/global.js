@@ -438,11 +438,12 @@ customElements.define('deferred-media', DeferredMedia);
 //  CUSTOM FUNCTIONS FOR SCH  //
 
 let modal = document.getElementById("checkout-modal");
-let sch_close = document.getElementById("sch-modal-icon").children[0];
+let sch_close = document.getElementById("sch-modal-icon");
 let mechanic_btn = document.getElementById("mechanic_cart_submit");
 let cart_btns = document.getElementsByName("checkout");
 let btn = document.getElementById("close-modal-btn");
 let cost_center_num = document.getElementById("cost-center-number");
+console.log("cost center num: ", cost_center_num);
 
 
 // EMPTY THE CART AFTER DRAFT ORDER IS SUCCESSFULLY SUBMITTED //
