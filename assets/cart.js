@@ -57,6 +57,7 @@ class CartItems extends HTMLElement {
 // Updates the quantity of the cart when the quantity input is changed //
 // ? But, does it update the Cart db too! ? //
   updateQuantity(line, quantity, name) {
+    console.log("updateQuantity args: ", line, quantity, name);
     this.enableLoading(line);
 
     const body = JSON.stringify({
@@ -125,6 +126,7 @@ class CartItems extends HTMLElement {
   }
 
   enableLoading(line) {
+    console.log("enableLoading: ", line);
     document.getElementById('main-cart-items').classList.add('cart__items--disabled');
     this.querySelectorAll('.loading-overlay')[line - 1].classList.remove('hidden');
     document.activeElement.blur();
