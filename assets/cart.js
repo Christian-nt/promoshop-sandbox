@@ -58,8 +58,8 @@ class CartItems extends HTMLElement {
     ];
   }
 
-// Updates the quantity of the cart when the quantity input is changed //
-// ? But, does it update the Cart db too! ? //
+  // Updates the quantity of the cart when the quantity input is changed //
+  // ? But, does it update the Cart db too! ? //
   updateQuantity(line, quantity, name) {
     console.log("updateQuantity args: ", line, quantity, name);
     this.enableLoading(line);
@@ -143,6 +143,170 @@ class CartItems extends HTMLElement {
     document.getElementById('main-cart-items').classList.remove('cart__items--disabled');
   }
 }
-console.table(getSectionsToRender());
 customElements.define('cart-items', CartItems);
 
+//  CUSTOM FUNCTIONS FOR SCH  //
+
+let modal = document.getElementById("checkout-modal");
+let sch_close = document.getElementById("sch-modal-icon").children[0];
+let mechanic_btn = document.getElementById("mechanic_cart_submit");
+let cart_btns = document.getElementsByName("checkout");
+let btn = document.getElementById("close-modal-btn");
+let cost_center_num = document.getElementById("cost-center-number");
+
+
+// EMPTY THE CART AFTER DRAFT ORDER IS SUCCESSFULLY SUBMITTED //
+function emptyCart() {
+  fetch('cart/clear.js', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  }).then(response => {
+    console.log("Cart cleared successfully!");
+  }).catch( (error) => {
+    console.log("There was an error clearing the cart!", error);
+  });
+}
+// RADIO BUTTONS FOR SELECTING CHECKOUT PATH //
+let radio_btn_value = "";
+function activateCheckout(e) {
+  radio_btn_value = e;
+  if (e === "cost-center") {
+    cart_btns[0].disabled = true;
+    cart_btns[0].type="hidden"
+    cost_center_num.disabled = false;
+    mechanic_btn.type = "submit";
+    mechanic_btn.disabled = true;
+    
+  } else if (e === "personal") {
+    cost_center_num.disabled = true;
+    cart_btns[0].disabled = false;
+    cart_btns[0].type = "submit";
+    mechanic_btn.type = "hidden";
+    cost_center_num.disabled = true;
+    cost_center_num.value = "";
+  }
+}
+
+// Cost Center Input Field // 
+cost_center_num.addEventListener('input', function(e) {
+  if(cost_center_num.value.length > 0) {
+    console.log("csn: ", cost_center_num.value.length);
+    console.log(radio_btn_value);
+    cart_btns[0].type = "hidden";
+    mechanic_btn.disabled = false;
+    mechanic_btn.type = "submit";
+  } 
+  if (cost_center_num.value.length === 0) {
+    console.log(cost_center_num.value.length);
+    cart_btns[0].disabled = true;
+    mechanic_btn.disabled = true;
+    mechanic_btn.type = "submit";
+    cost_center_num.value = "";
+  }
+});
+
+sch_close.onclick = function() {
+  modal.style.display = "none";
+  location.reload();
+}
+
+window.onclick = function() {
+  modal.style.display = "none";
+}
+
+// function errorModal() {
+//   let content = document.getElementById("sch-content");
+//   let modal_btn = document.querySelector(".btn-container");
+//   let error_msg = document.createTextNode("ERROR MSG");
+//   let modal_msg = document.querySelector(".sch-message").childNodes[1];
+  
+//   content.classList.remove("form-message--success");
+//   content.classList.add("form-message--error");
+//   modal_btn.style.display = "none";
+//   modal_msg.replaceChild(error_msg, modal_msg.childNodes[0]);
+//   modal.style.display = "block";
+// }//  CUSTOM FUNCTIONS FOR SCH  //
+
+let modal = document.getElementById("checkout-modal");
+let sch_close = document.getElementById("sch-modal-icon").children[0];
+let mechanic_btn = document.getElementById("mechanic_cart_submit");
+let cart_btns = document.getElementsByName("checkout");
+let btn = document.getElementById("close-modal-btn");
+let cost_center_num = document.getElementById("cost-center-number");
+
+
+// EMPTY THE CART AFTER DRAFT ORDER IS SUCCESSFULLY SUBMITTED //
+function emptyCart() {
+  fetch('cart/clear.js', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  }).then(response => {
+    console.log("Cart cleared successfully!");
+  }).catch( (error) => {
+    console.log("There was an error clearing the cart!", error);
+  });
+}
+// RADIO BUTTONS FOR SELECTING CHECKOUT PATH //
+let radio_btn_value = "";
+function activateCheckout(e) {
+  radio_btn_value = e;
+  if (e === "cost-center") {
+    cart_btns[0].disabled = true;
+    cart_btns[0].type="hidden"
+    cost_center_num.disabled = false;
+    mechanic_btn.type = "submit";
+    mechanic_btn.disabled = true;
+    
+  } else if (e === "personal") {
+    cost_center_num.disabled = true;
+    cart_btns[0].disabled = false;
+    cart_btns[0].type = "submit";
+    mechanic_btn.type = "hidden";
+    cost_center_num.disabled = true;
+    cost_center_num.value = "";
+  }
+}
+
+// Cost Center Input Field // 
+cost_center_num.addEventListener('input', function(e) {
+  if(cost_center_num.value.length > 0) {
+    console.log("csn: ", cost_center_num.value.length);
+    console.log(radio_btn_value);
+    cart_btns[0].type = "hidden";
+    mechanic_btn.disabled = false;
+    mechanic_btn.type = "submit";
+  } 
+  if (cost_center_num.value.length === 0) {
+    console.log(cost_center_num.value.length);
+    cart_btns[0].disabled = true;
+    mechanic_btn.disabled = true;
+    mechanic_btn.type = "submit";
+    cost_center_num.value = "";
+  }
+});
+
+sch_close.onclick = function() {
+  modal.style.display = "none";
+  location.reload();
+}
+
+window.onclick = function() {
+  modal.style.display = "none";
+}
+
+// function errorModal() {
+//   let content = document.getElementById("sch-content");
+//   let modal_btn = document.querySelector(".btn-container");
+//   let error_msg = document.createTextNode("ERROR MSG");
+//   let modal_msg = document.querySelector(".sch-message").childNodes[1];
+  
+//   content.classList.remove("form-message--success");
+//   content.classList.add("form-message--error");
+//   modal_btn.style.display = "none";
+//   modal_msg.replaceChild(error_msg, modal_msg.childNodes[0]);
+//   modal.style.display = "block";
+// }

@@ -50,13 +50,34 @@
                 </small>
               </div>
             {%- else -%}
+            <div class="" >
+              <div class="">
+                <div class="sch-radio-container">                
+                  <label class="sch-justify-content-apart" for="personal">
+                    <input id="personal" type="radio" name="checkout-type" checked="checked"
+                    value="personal" class="sch-radio-btns" onClick="activateCheckout(value)"
+                    >
+                      Personal Order
+                  </label>
+                  <label class="sch-justify-content-apart" for="cost-center">
+                    <input  id="cost-center" type="radio" name="checkout-type" 
+                    value="cost-center" class="sch-radio-btns" onClick="activateCheckout(value)"
+                    >
+                      Cost Center Order
+                  </label>
+                  <input id="cost-center-number" type="number" width="150px" maxlength="12" name="cost-center-number" 
+                  placeholder="COST CENTER ID" class="ccn-input" disabled required
+                  >
+                </div>
+              </div>
+            </div>
               <div class="cart__ctas" {{ block.shopify_attributes }}>
                 <noscript>
                   <button type="submit" class="cart__update-button button button--secondary" form="cart">
                     {{ 'sections.cart.update' | t }}
                   </button>
                 </noscript>
-
+                {% comment %} Checkout Options  {% endcomment %}
                 <button type="submit" class="cart__checkout-button button" name="checkout"{% if cart == empty %} disabled{% endif %} form="cart">
                   {{ 'sections.cart.checkout' | t }}
                 </button>
