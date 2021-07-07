@@ -21,6 +21,7 @@ class CartItems extends HTMLElement {
       .reduce((total, quantityInput) => total + parseInt(quantityInput.value), 0);
 
     this.debouncedOnChange = debounce((event) => {
+      console.trace(event);
       this.onChange(event);
     }, 300);
 
@@ -28,6 +29,7 @@ class CartItems extends HTMLElement {
   }
 
   onChange(event) {
+    console.log("trace: ", event);
     this.updateQuantity(event.target.dataset.index, event.target.value, document.activeElement.getAttribute('name'));
   }
 
@@ -76,7 +78,7 @@ class CartItems extends HTMLElement {
       })
       .then((state) => {
         const parsedState = JSON.parse(state);
-        console.log(parsedState);
+        console.log("parsed state: ", parsedState);
         this.classList.toggle('is-empty', parsedState.item_count === 0);
         document.getElementById('main-cart-footer')?.classList.toggle('is-empty', parsedState.item_count === 0);
 
@@ -100,7 +102,7 @@ class CartItems extends HTMLElement {
   }
 
   updateLiveRegions(line, itemCount) {
-    console.log("Clicked!!", line, itemCount);
+    console.log("update live regions args: ", line, itemCount);
     if (this.currentItemCount === itemCount) {
       document.getElementById(`Line-item-error-${line}`)
         .querySelector('.cart-item__error-text')
@@ -122,6 +124,7 @@ class CartItems extends HTMLElement {
   }
 
   getSectionInnerHTML(html, selector) {
+    console.log("Get section innerHTML: ", html, selector);
     return new DOMParser()
       .parseFromString(html, 'text/html')
       .querySelector(selector).innerHTML;
@@ -136,9 +139,10 @@ class CartItems extends HTMLElement {
   }
 
   disableLoading() {
+    console.log("disableLoading fired.")
     document.getElementById('main-cart-items').classList.remove('cart__items--disabled');
   }
 }
-console.table(getSectionsToRender());
+
 customElements.define('cart-items', CartItems);
 
