@@ -483,14 +483,12 @@ function activateCheckout(e) {
 // Cost Center Input Field // 
 cost_center_num.addEventListener('input', function(e) {
   if(cost_center_num.value.length > 0) {
-    console.log("csn: ", cost_center_num.value);
     console.log(radio_btn_value);
     cart_btns[0].type = "hidden";
     mechanic_btn.disabled = false;
     mechanic_btn.type = "submit";
   } 
   if (cost_center_num.value.length === 0) {
-    console.log(cost_center_num.value.length);
     cart_btns[0].disabled = true;
     mechanic_btn.disabled = true;
     mechanic_btn.type = "submit";
