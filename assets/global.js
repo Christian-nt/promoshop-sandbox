@@ -550,7 +550,7 @@ const qbtn = document.querySelector('.quantity__button');
     if (event.target.name === "minus") {
       currentQty = currentQty -= 1;
     }
-    console.log(currentQty);
+    console.log("updated qty: ",currentQty);
   });
 
 
