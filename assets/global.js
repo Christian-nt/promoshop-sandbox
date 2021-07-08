@@ -506,8 +506,8 @@ window.onclick = function() {
 
 const updatedItemCount = document.querySelector('Quantity-{{ item.index | plus: 1 }}');
 console.log("updated Item count: ", updatedItemCount);
-const btn = document.querySelector("#mechanic_cart_submit");
-btn.addEventListener('click', function(e) {
+const mBtn = document.querySelector("#mechanic_cart_submit");
+mBtn.addEventListener('click', function(e) {
 
   let formData = {
     'id': JSON.parse(),
