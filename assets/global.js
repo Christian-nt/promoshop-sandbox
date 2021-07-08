@@ -481,7 +481,7 @@ function activateCheckout(e) {
 }
 
 // Cost Center Input Field // 
-cost_center_num.addEventListener('change', function(e) {
+cost_center_num.addEventListener('input', function(e) {
   if(cost_center_num.value.length > 0) {
     cart_btns[0].type = "hidden";
     mechanic_btn.disabled = false;
