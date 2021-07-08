@@ -2,7 +2,7 @@ class CartRemoveButton extends HTMLElement {
   constructor() {
     super();
     this.addEventListener('click', (event) => {
-      console.log("event", event);
+      // console.log("event", event);
       event.preventDefault();
       this.closest('cart-items').updateQuantity(this.dataset.index, 0);
     });
@@ -28,7 +28,7 @@ class CartItems extends HTMLElement {
   }
 
   onChange(event) {
-    console.log("onChange: ", event.target.dataset);
+    // console.log("onChange: ", event.target.dataset);
     this.updateQuantity(event.target.dataset.index, event.target.value, document.activeElement.getAttribute('name'));
   }
 
