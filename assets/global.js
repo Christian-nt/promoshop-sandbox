@@ -542,7 +542,7 @@ window.onclick = function() {
 //     console.log("cart update error: ", error);
 //   });
 // });
-const currentQty = document.querySelector('#Quantity-1');
+let currentQty = document.querySelector('#Quantity-1');
 let updatedQty = currentQty.addEventListener('change', (event) => {
     return event.target.value;
   });
