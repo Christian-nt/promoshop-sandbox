@@ -59,9 +59,9 @@ class CartItems extends HTMLElement {
   }
 
   // Updates the quantity of the cart when the quantity input is changed //
-  // ? But, does it update the Cart db too! ? //
+  // But does not update cart object.  Cart api is only updated after form submission //
   updateQuantity(line, quantity, name) {
-    console.log("updateQuantity args: ", line, quantity, name);
+    console.log("line, quantity, name: ", line, quantity, name);
     this.enableLoading(line);
 
     const body = JSON.stringify({

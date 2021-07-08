@@ -504,29 +504,6 @@ window.onclick = function() {
   modal.style.display = "none";
 }
 
-const updatedItemCount = document.querySelector('Quantity-{{ item.index | plus: 1 }}');
-console.log("updated Item count: ", updatedItemCount);
-const mBtn = document.querySelector("#mechanic_cart_submit");
-mBtn.addEventListener('click', function(e) {
-
-  let formData = {
-    'id': JSON.parse(),
-    'quantity': JSON.parse()
-  }
-  fetch("/cart/change.js", {
-    method: "POST",
-    headers: {
-      'Content-type': 'application/json'
-    },
-    body: JSON.stringify(formData),
-  })
-  .then(response => {
-    console.table("cart updated: ", response.json());
-  })
-  .catch(error => {
-    console.log("cart update error: ", error);
-  });
-})
 
 // function errorModal() {
 //   let content = document.getElementById("sch-content");
