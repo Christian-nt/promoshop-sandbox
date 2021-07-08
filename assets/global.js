@@ -543,8 +543,9 @@ window.onclick = function() {
 //   });
 // });
 
-let updatedQty = currentQty.addEventListener('change', (event) => {
-  console.log("event", event.target.value);
-  return event.target.value;
-});
-console.log(updatedQty);
+let updatedQty = () => {
+  return currentQty.addEventListener('change', (event) => {
+    return event.target.value;
+  });
+} 
+console.log(updatedQty());
