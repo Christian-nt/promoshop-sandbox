@@ -521,7 +521,7 @@ btn.addEventListener('click', function(e) {
     body: JSON.stringify(formData),
   })
   .then(response => {
-    console.log("cart updated: ", response);
+    console.table("cart updated: ", response.json());
   })
   .catch(error => {
     console.log("cart update error: ", error);
