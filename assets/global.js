@@ -541,11 +541,8 @@ window.onclick = function() {
 // });
 
 let updatedQty;
-let currentQty = document.querySelector('.quantity__input');
-console.log("input: ", currentQty);
+let currentQty = document.querySelector('.quantity__input').value;
 let qbtn = document.querySelector('.quantity__button');
-document.addEventListener('load', () => {
   qbtn.addEventListener('click', (event) => {
-    console.log(event.target.name);
+    console.log("input: ", currentQty);
   });
-})
