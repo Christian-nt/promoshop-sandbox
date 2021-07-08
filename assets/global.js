@@ -542,6 +542,6 @@ window.onclick = function() {
 
 let updatedQty;
 let currentQty = document.querySelector('.quantity__input');
-currentQty.addEventListener('change', (event) => {
+currentQty.addEventListener('input', (event) => {
     console.log("clicked!");
   });
