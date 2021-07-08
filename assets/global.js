@@ -540,7 +540,7 @@ window.onclick = function() {
 //   });
 // });
 
-let currentQty = document.querySelector('.quantity__input').value;
+let currentQty = document.querySelector('.quantity__input');
 let qbtn = document.querySelector('.quantity__button');
   window.addEventListener('click', (event) => {
     console.log("event, currentQty: ", event.target.name, currentQty);
