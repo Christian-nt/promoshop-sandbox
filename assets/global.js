@@ -545,7 +545,7 @@ let currentQty = document.querySelector('.quantity__input').value;
 let qbtn = document.querySelector('.quantity__button');
   window.addEventListener('click', (event) => {
     console.log(event.target.name);
-    // if(event.target.name.includes('minus', 'plus')) {
-    //   console.log("input: ", currentQty);
-    // }
+    if(event.target.name.includes('minus', 'plus')) {
+      console.log("input: ", currentQty);
+    }
   });
