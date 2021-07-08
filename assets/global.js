@@ -436,15 +436,12 @@ class DeferredMedia extends HTMLElement {
 customElements.define('deferred-media', DeferredMedia);
 
 //  CUSTOM FUNCTIONS FOR SCH  //
-
 let modal = document.getElementById("checkout-modal");
 let sch_close = document.getElementById("sch-modal-icon");
 let mechanic_btn = document.getElementById("mechanic_cart_submit");
 let cart_btns = document.getElementsByName("checkout");
 let btn = document.getElementById("close-modal-btn");
 let cost_center_num = document.getElementById("cost-center-number");
-console.log("cost center num: ", cost_center_num.value);
-
 
 // EMPTY THE CART AFTER DRAFT ORDER IS SUCCESSFULLY SUBMITTED //
 function emptyCart() {
@@ -545,7 +542,6 @@ window.onclick = function() {
 
 let updatedQty;
 let currentQty = document.querySelector('.quantity__input');
-console.log(currentQty);
-currentQty.addEventListener('input', (event) => {
+currentQty.addEventListener('change', (event) => {
     console.log("clicked!");
   });
