@@ -546,6 +546,6 @@ let qbtn = document.querySelector('.quantity__button');
   window.addEventListener('click', (event) => {
     console.log(event.target.name);
     if(event.target.name.includes('minus', 'plus')) {
-      console.log("input: ", event.target.firstElementChild);
+      console.log("input: ", event.target);
     }
   });
