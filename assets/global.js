@@ -517,3 +517,28 @@ window.onclick = function() {
 //   modal_msg.replaceChild(error_msg, modal_msg.childNodes[0]);
 //   modal.style.display = "block";
 // }
+
+
+// If user updates cart, then clicks the mechanic submit, the cart is updated with new quantity. // 
+// const updatedItemCount = document.querySelector('#Quantity-'{{ item.index | plus: 1 }});
+// console.log("updated Item count: ", updatedItemCount);
+// const mBtn = document.querySelector("#mechanic_cart_submit");
+// mBtn.addEventListener('click', function(event) {
+//   let formData = {
+//     'id': JSON.parse(),
+//     'quantity': JSON.parse()
+//   }
+//   fetch("/cart/change.js", {
+//     method: "POST",
+//     headers: {
+//       'Content-type': 'application/json'
+//     },
+//     body: JSON.stringify(formData),
+//   })
+//   .then(response => {
+//     console.table("cart updated: ", response.json());
+//   })
+//   .catch(error => {
+//     console.log("cart update error: ", error);
+//   });
+// });

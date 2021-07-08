@@ -72,12 +72,12 @@ class CartItems extends HTMLElement {
 
     fetch(`${routes.cart_change_url}`, {...fetchConfig(), ...{ body }})
       .then((response) => {
-        console.log("response: ", response.json());
+        //console.log("response: ", response.json());
         return response.text();
       })
       .then((state) => {
         const parsedState = JSON.parse(state);
-        console.log("parsed state: ", parsedState);
+        //console.log("parsed state: ", parsedState);
         this.classList.toggle('is-empty', parsedState.item_count === 0);
         document.getElementById('main-cart-footer')?.classList.toggle('is-empty', parsedState.item_count === 0);
 
@@ -123,14 +123,14 @@ class CartItems extends HTMLElement {
   }
 
   getSectionInnerHTML(html, selector) {
-    console.log("Get section innerHTML: ", html, selector);
+    // console.log("Get section innerHTML: ", html, selector);
     return new DOMParser()
       .parseFromString(html, 'text/html')
       .querySelector(selector).innerHTML;
   }
 
   enableLoading(line) {
-    console.log("enableLoading: ", line);
+    // console.log("enableLoading: ", line);
     document.getElementById('main-cart-items').classList.add('cart__items--disabled');
     this.querySelectorAll('.loading-overlay')[line - 1].classList.remove('hidden');
     document.activeElement.blur();
@@ -138,7 +138,7 @@ class CartItems extends HTMLElement {
   }
 
   disableLoading() {
-    console.log("disableLoading fired.")
+    // console.log("disableLoading fired.")
     document.getElementById('main-cart-items').classList.remove('cart__items--disabled');
   }
 }
