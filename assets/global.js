@@ -542,8 +542,9 @@ window.onclick = function() {
 //     console.log("cart update error: ", error);
 //   });
 // });
+
+let updatedQty;
 let currentQty = document.querySelector('#Quantity-1');
-let updatedQty = currentQty.addEventListener('change', (event) => {
-    return event.target.value;
+currentQty.addEventListener('change', (event) => {
+    console.log("clicked!");
   });
-console.log(updatedQty);
