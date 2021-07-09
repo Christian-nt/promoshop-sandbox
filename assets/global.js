@@ -545,7 +545,7 @@ window.addEventListener('click', (event) => {
   console.log(event);
   let updatedQty;
   let input = document.querySelector('.quantity__input');
-  const qty = parseInt(input.value)
+  let qty = parseInt(input.value)
   console.log("value, id, data-index: ", input.value, qty, input.dataSet)
   if(event.target.name === "plus") {
     qty = qty + 1;
