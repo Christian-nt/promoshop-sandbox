@@ -545,6 +545,7 @@ let updatedQty;
 let currentQty = parseInt(document.querySelector('.quantity__input').value);
 const qbtn = document.querySelector('.quantity__button');
 window.addEventListener('click', (event) => {
+  console.log('clicked');
   if(event.target.name === "plus") {
     currentQty = currentQty + 1;
   }
@@ -555,6 +556,7 @@ window.addEventListener('click', (event) => {
 });
 
 function updateCartQty(line, quantity) {
+  console.log('activated.');
   const body = JSON.stringify({
   line,
   quantity,
@@ -568,8 +570,8 @@ fetch(`${routes.cart_change_url}`, {
   body,
 })
 .then(response => {
-  return response.text();
   console.table("cart updated: ", response.json());
+  // return response.text();
 })
 .catch(error => {
   console.log("cart update error: ", error);
