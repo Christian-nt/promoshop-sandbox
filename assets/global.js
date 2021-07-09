@@ -540,17 +540,18 @@ window.onclick = function() {
 //   });
 // });
 
-let updatedQty;
-let currentQty = parseInt(document.querySelector('.quantity__input').value);
-const qbtn = document.querySelector('.quantity__button');
-window.addEventListener('click', (event) => {
-  if(event.target.name === "plus") {
-    currentQty = currentQty + 1;
-  }
-  if (event.target.name === "minus") {
-    currentQty = currentQty - 1;
-  } 
-  // updatedQty = currentQty
-  console.log(currentQty);
-});
+let updatedQty = () => {
+  let currentQty = parseInt(document.querySelector('.quantity__input').value);
+  const qbtn = document.querySelector('.quantity__button');
+  return window.addEventListener('click', (event) => {
+            if(event.target.name === "plus") {
+              currentQty = currentQty + 1;
+            }
+            if (event.target.name === "minus") {
+              currentQty = currentQty - 1;
+            } 
+          
+          });
+}
+console.log(updatedQty());
 
