@@ -544,7 +544,7 @@ window.onclick = function() {
 window.addEventListener('click', (event) => {
   console.log(event);
   let updatedQty;
-  let input = parseInt(document.querySelector('.quantity__input'));
+  let input = document.querySelector('.quantity__input');
   console.log("value, id, data-index: ", input.value, input.id, input.dataIndex)
   let dataSet = document.querySelector('.quantity__input');
   console.log(dataSet);
