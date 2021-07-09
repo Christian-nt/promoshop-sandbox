@@ -60,7 +60,7 @@ class CartItems extends HTMLElement {
   // Updates the quantity of the cart when the quantity input is changed //
   // But does not update cart object.  Cart api is only updated after form submission //
   updateQuantity(line, quantity, name) {
-    console.log("line, quantity, name: ", line, quantity, name);
+    //console.log("line, quantity, name: ", line, quantity, name);
     this.enableLoading(line);
 
     const body = JSON.stringify({
@@ -73,12 +73,10 @@ class CartItems extends HTMLElement {
 
     fetch(`${routes.cart_change_url}`, {...fetchConfig(), ...{ body }})
       .then((response) => {
-        console.log("response: ", response.json());
         return response.text();
       })
       .then((state) => {
         const parsedState = JSON.parse(state);
-        console.log("parsed state: ", parsedState);
         this.classList.toggle('is-empty', parsedState.item_count === 0);
         document.getElementById('main-cart-footer')?.classList.toggle('is-empty', parsedState.item_count === 0);
 
@@ -124,7 +122,6 @@ class CartItems extends HTMLElement {
   }
 
   getSectionInnerHTML(html, selector) {
-    // console.log("Get section innerHTML: ", html, selector);
     return new DOMParser()
       .parseFromString(html, 'text/html')
       .querySelector(selector).innerHTML;
