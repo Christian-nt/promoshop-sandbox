@@ -551,4 +551,5 @@ window.addEventListener('click', (event) => {
     updatedQty = currentQty - 1;
   } 
 });
+console.log(updatedQty);
 
