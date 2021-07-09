@@ -541,10 +541,9 @@ window.onclick = function() {
 // });
 
 
-let updatedQty;
-let currentQty = parseInt(document.querySelector('.quantity__input').value);
-const qbtn = document.querySelector('.quantity__button');
 window.addEventListener('click', (event) => {
+  let updatedQty;
+  let currentQty = parseInt(document.querySelector('.quantity__input').value);
   console.log('clicked');
   if(event.target.name === "plus") {
     currentQty = currentQty + 1;
@@ -552,7 +551,7 @@ window.addEventListener('click', (event) => {
   if (event.target.name === "minus") {
     currentQty = currentQty - 1;
   } 
-  updateCartQty(event.dataset.index, currentQty)
+  updateCartQty(event.dataset.index, currentQty);
 });
 
 function updateCartQty(line, quantity) {
