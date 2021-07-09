@@ -540,20 +540,3 @@ window.onclick = function() {
 //   });
 // });
 
-let currentQty = document.querySelector('.quantity__input').value;
-const qbtn = document.querySelector('.quantity__button');
-  window.addEventListener('click', (event) => {
-    console.log("event, currentQty: ", event.target.name, currentQty);
-    if(event.target.name === "plus") {
-      currentQty = parseInt(currentQty) + 1;
-    }
-    if (event.target.name === "minus") {
-      currentQty = parseInt(currentQty) - 1;
-    }
-    console.log("updated qty: ",currentQty);
-  });
-
-
-  // function updateQuantity(line, quantity, name) {
-
-  // } 
