@@ -540,15 +540,34 @@ window.onclick = function() {
 //   });
 // });
 
-let updatedQty;
 const currentQty = parseInt(document.querySelector('.quantity__input').value);
 const qbtn = document.querySelector('.quantity__button');
 window.addEventListener('click', (event) => {
+  // event.preventDefault();
+  let updatedQty;
   if(event.target.name === "plus") {
     updatedQty = currentQty + 1;
   }
   if (event.target.name === "minus") {
     updatedQty = currentQty - 1;
   } 
+  console.log(updatedQty);
+  // const formData = {
+  //   'id': JSON.parse(),
+  //   'quantity': JSON.parse()
+  // }
+  // fetch("/cart/change.js", {
+  //   method: "POST",
+  //   headers: {
+  //     'Content-type': 'application/json'
+  //   },
+  //   body: JSON.stringify(formData),
+  // })
+  // .then(response => {
+  //   console.table("cart updated: ", response.json());
+  // })
+  // .catch(error => {
+  //   console.log("cart update error: ", error);
+  // });
 });
 

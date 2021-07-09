@@ -78,7 +78,7 @@ class CartItems extends HTMLElement {
       })
       .then((state) => {
         const parsedState = JSON.parse(state);
-        //console.log("parsed state: ", parsedState);
+        console.log("parsed state: ", parsedState);
         this.classList.toggle('is-empty', parsedState.item_count === 0);
         document.getElementById('main-cart-footer')?.classList.toggle('is-empty', parsedState.item_count === 0);
 
@@ -131,7 +131,6 @@ class CartItems extends HTMLElement {
   }
 
   enableLoading(line) {
-    // console.log("enableLoading: ", line);
     document.getElementById('main-cart-items').classList.add('cart__items--disabled');
     this.querySelectorAll('.loading-overlay')[line - 1].classList.remove('hidden');
     document.activeElement.blur();
@@ -139,7 +138,6 @@ class CartItems extends HTMLElement {
   }
 
   disableLoading() {
-    // console.log("disableLoading fired.")
     document.getElementById('main-cart-items').classList.remove('cart__items--disabled');
   }
 }
