@@ -57,7 +57,7 @@ class CartItems extends HTMLElement {
     ];
   }
 
-  // Updates the quantity of the cart when the quantity input is changed //
+  // Updates the quantity of the cart items//
   // But does not update cart object.  Cart api is only updated after form submission //
   updateQuantity(line, quantity, name) {
     //console.log("line, quantity, name: ", line, quantity, name);
