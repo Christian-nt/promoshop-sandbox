@@ -540,18 +540,39 @@ window.onclick = function() {
 //   });
 // });
 
-let updatedQty = () => {
-  let currentQty = parseInt(document.querySelector('.quantity__input').value);
-  // const qbtn = document.querySelector('.quantity__button');
-  return window.addEventListener('click', (event) => {
-            if(event.target.name === "plus") {
-              return currentQty + 1;
-            }
-            if (event.target.name === "minus") {
-              return currentQty - 1;
-            } 
-          
-          });
+
+let updatedQty;
+let currentQty = parseInt(document.querySelector('.quantity__input').value);
+const qbtn = document.querySelector('.quantity__button');
+window.addEventListener('click', (event) => {
+  if(event.target.name === "plus") {
+    currentQty = currentQty + 1;
+  }
+  if (event.target.name === "minus") {
+    currentQty = currentQty - 1;
+  } 
+  updateCartQty(event.dataset.index, currentQty)
+});
+
+function updateCartQty(line, quantity) {
+  const body = JSON.stringify({
+  line,
+  quantity,
+});
+
+fetch(`${routes.cart_change_url}`, {
+  method: "POST",
+  headers: {
+    'Content-type': 'application/json'
+  },
+  body,
+})
+.then(response => {
+  return response.text();
+  console.table("cart updated: ", response.json());
+})
+.catch(error => {
+  console.log("cart update error: ", error);
+});
 }
-console.log(updatedQty());
 
