@@ -542,6 +542,7 @@ window.onclick = function() {
 
 
 window.addEventListener('click', (event) => {
+  console.log(event);
   let updatedQty;
   let currentQty = parseInt(document.querySelector('.quantity__input').value);
   console.log('clicked');
