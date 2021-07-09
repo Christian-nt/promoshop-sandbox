@@ -545,7 +545,7 @@ window.addEventListener('click', (event) => {
   console.log(event);
   let updatedQty;
   let input = document.querySelector('.quantity__input');
-  console.log("value, id, data-index: ", input.value, input.id, input.dataIndex)
+  console.log("value, id, data-index: ", input.value, input.id, input.data_index)
   let dataSet = document.querySelector('.quantity__input');
   console.log(dataSet);
   console.log('clicked');
