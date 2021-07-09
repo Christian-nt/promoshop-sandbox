@@ -73,7 +73,7 @@ class CartItems extends HTMLElement {
 
     fetch(`${routes.cart_change_url}`, {...fetchConfig(), ...{ body }})
       .then((response) => {
-        //console.log("response: ", response.json());
+        console.log("response: ", response.json());
         return response.text();
       })
       .then((state) => {
