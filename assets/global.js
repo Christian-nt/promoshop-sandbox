@@ -551,23 +551,23 @@ window.addEventListener('click', (event) => {
   if (event.target.name === "minus") {
     updatedQty = currentQty - 1;
   } 
-  console.log(updatedQty);
   // const formData = {
-  //   'id': JSON.parse(),
-  //   'quantity': JSON.parse()
-  // }
-  // fetch("/cart/change.js", {
-  //   method: "POST",
-  //   headers: {
-  //     'Content-type': 'application/json'
-  //   },
-  //   body: JSON.stringify(formData),
-  // })
-  // .then(response => {
-  //   console.table("cart updated: ", response.json());
-  // })
-  // .catch(error => {
-  //   console.log("cart update error: ", error);
-  // });
-});
+    //   'id': JSON.parse(),
+    //   'quantity': JSON.parse()
+    // }
+    // fetch("/cart/change.js", {
+      //   method: "POST",
+      //   headers: {
+        //     'Content-type': 'application/json'
+        //   },
+        //   body: JSON.stringify(formData),
+        // })
+        // .then(response => {
+          //   console.table("cart updated: ", response.json());
+          // })
+          // .catch(error => {
+            //   console.log("cart update error: ", error);
+            // });
+  });
+  console.log(updatedQty);
 
