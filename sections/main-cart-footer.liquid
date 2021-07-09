@@ -88,7 +88,7 @@
                   data-cart="{{ cart | json | escape }}"
                   data-customer-id="{{ customer.id | json | escape }}"
                   data-customer-id-signature="{{ customer.id | hmac_sha256: 'YellowDuck2021' | json | escape }}"
-                  form="cart" 
+                  form="cart"
                   disabled
                 >
               </div>
