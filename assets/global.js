@@ -550,6 +550,6 @@ window.addEventListener('click', (event) => {
   if (event.target.name === "minus") {
     updatedQty = currentQty - 1;
   } 
+  console.log(updatedQty);
 });
-console.log(updatedQty);
 
