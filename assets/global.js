@@ -578,5 +578,5 @@ window.addEventListener('click', (event) => {
 // .catch(error => {
 //   console.log("cart update error: ", error);
 // });
-}
+// }
 
