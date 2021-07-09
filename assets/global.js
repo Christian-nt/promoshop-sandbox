@@ -541,7 +541,7 @@ window.onclick = function() {
 // });
 
 let updatedQty;
-const currentQty = parseInt(document.querySelector('.quantity__input').value);
+let currentQty = parseInt(document.querySelector('.quantity__input').value);
 const qbtn = document.querySelector('.quantity__button');
 window.addEventListener('click', (event) => {
   if(event.target.name === "plus") {
