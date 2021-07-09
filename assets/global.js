@@ -544,15 +544,16 @@ window.onclick = function() {
 window.addEventListener('click', (event) => {
   console.log(event);
   let updatedQty;
-  let currentQty = parseInt(document.querySelector('.quantity__input').value);
+  let input = parseInt(document.querySelector('.quantity__input'));
+  console.log("value, id, data-index: ", input.value, input.id, input.data-index)
   let dataSet = document.querySelector('.quantity__input');
   console.log(dataSet);
   console.log('clicked');
   if(event.target.name === "plus") {
-    currentQty = currentQty + 1;
+    input.value = input.value + 1;
   }
   if (event.target.name === "minus") {
-    currentQty = currentQty - 1;
+    input.value = input.value - 1;
   } 
   // updateCartQty(event.dataset.index, currentQty);
 });
