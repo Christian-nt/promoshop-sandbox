@@ -552,7 +552,7 @@ window.addEventListener('click', (event) => {
   if (event.target.name === "minus") {
     currentQty = currentQty - 1;
   } 
-  updateCartQty(event.dataset.index, currentQty);
+  // updateCartQty(event.dataset.index, currentQty);
 });
 
 function updateCartQty(line, quantity) {
