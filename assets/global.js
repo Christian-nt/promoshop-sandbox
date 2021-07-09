@@ -540,11 +540,11 @@ window.onclick = function() {
 //   });
 // });
 
+let updatedQty;
 const currentQty = parseInt(document.querySelector('.quantity__input').value);
 const qbtn = document.querySelector('.quantity__button');
 window.addEventListener('click', (event) => {
   // event.preventDefault();
-  let updatedQty;
   if(event.target.name === "plus") {
     updatedQty = currentQty + 1;
   }
@@ -568,6 +568,6 @@ window.addEventListener('click', (event) => {
           // .catch(error => {
             //   console.log("cart update error: ", error);
             // });
-  });
-  console.log(updatedQty);
+});
+console.log(updatedQty);
 
