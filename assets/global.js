@@ -545,11 +545,12 @@ const currentQty = parseInt(document.querySelector('.quantity__input').value);
 const qbtn = document.querySelector('.quantity__button');
 window.addEventListener('click', (event) => {
   if(event.target.name === "plus") {
-    updatedQty = currentQty + 1;
+    currentQty = currentQty + 1;
   }
   if (event.target.name === "minus") {
-    updatedQty = currentQty - 1;
+    currentQty = currentQty - 1;
   } 
+  updatedQty = currentQty
   console.log(updatedQty);
 });
 
