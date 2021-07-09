@@ -545,39 +545,38 @@ window.addEventListener('click', (event) => {
   console.log(event);
   let updatedQty;
   let input = document.querySelector('.quantity__input');
-  console.log("value, id, data-index: ", input.value, input.id, input.data_index)
-  let dataSet = document.querySelector('.quantity__input');
-  console.log(dataSet);
-  console.log('clicked');
+  const qty = parseInt(input.value)
+  console.log("value, id, data-index: ", input.value, qty, input.data_index)
   if(event.target.name === "plus") {
-    input.value = input.value + 1;
+    qty = qty + 1;
   }
   if (event.target.name === "minus") {
-    input.value = input.value - 1;
+    qty = qty - 1;
   } 
+  console.log(qty);
   // updateCartQty(event.dataset.index, currentQty);
 });
 
-function updateCartQty(line, quantity) {
-  console.log('activated.');
-  const body = JSON.stringify({
-  line,
-  quantity,
-});
+// function updateCartQty(line, quantity) {
+//   console.log('activated.');
+//   const body = JSON.stringify({
+//   line,
+//   quantity,
+// });
 
-fetch(`${routes.cart_change_url}`, {
-  method: "POST",
-  headers: {
-    'Content-type': 'application/json'
-  },
-  body,
-})
-.then(response => {
-  console.table("cart updated: ", response.json());
-  // return response.text();
-})
-.catch(error => {
-  console.log("cart update error: ", error);
-});
+// fetch(`${routes.cart_change_url}`, {
+//   method: "POST",
+//   headers: {
+//     'Content-type': 'application/json'
+//   },
+//   body,
+// })
+// .then(response => {
+//   console.table("cart updated: ", response.json());
+//   // return response.text();
+// })
+// .catch(error => {
+//   console.log("cart update error: ", error);
+// });
 }
 
