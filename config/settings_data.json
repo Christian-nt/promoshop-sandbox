@@ -1,5 +1,6 @@
 {
   "current": {
+    "colors_accent_1": "#007d99",
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",
