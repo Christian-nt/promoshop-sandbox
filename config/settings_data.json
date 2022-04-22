@@ -4,6 +4,7 @@
     "colors_accent_2": "#ee7f4b",
     "colors_outline_button_labels": "#007d99",
     "colors_background_2": "#7a7d81",
+    "type_header_font": "montserrat_n4",
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",
