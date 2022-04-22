@@ -7,8 +7,8 @@
           "announcement-bar-0": {
             "type": "announcement",
             "settings": {
-              "text": "Welcome to our store",
-              "color_scheme": "accent-1",
+              "text": "Custom Apparel for your Seattle Children's Department",
+              "color_scheme": "accent-2",
               "link": ""
             }
           }

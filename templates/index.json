@@ -6,11 +6,12 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Catch the Wave of PromoShop"
+            "heading": "Seattle Children's Department Shop"
           }
         },
         "button": {
           "type": "buttons",
+          "disabled": true,
           "settings": {
             "button_label_1": "Shop all",
             "button_link_1": "shopify:\/\/collections\/all",
@@ -26,7 +27,7 @@
         "button"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/image-asset.jpg",
+        "image": "shopify:\/\/shop_images\/pexels-kampus-production-8813502.jpg",
         "desktop_text_box_position": "center",
         "color_scheme": "background-1",
         "stack_images_on_mobile": true,
